@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "github.com/executeautomation/mcp-playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@executeautomation/playwright-mcp-server"
+      ]
+    },
+    "reddit": {
+    "command": "uvx",
+    "args": ["--from", "git+https://github.com/adhikasp/mcp-reddit.git", "mcp-reddit"]
+    }
+  }
+}
