@@ -1,28 +1,21 @@
-# Active Context: Degen's Digest (Initial Setup)
+# Active Context: Degen's Digest (Refactored to Reddit MCP)
 
-**Current Focus:** Initial project setup and development of the core scraping and parsing logic in Go.
+**Current Focus:** Finalizing documentation updates after refactoring the workflow to use the Reddit MCP server.
 
 **Recent Changes:**
--   Initialized the project directory (`/Users/jasonlane/Documents/code/degens-digest`).
--   Created the `memory-bank/` directory.
--   Created core Memory Bank documents:
-    -   `projectbrief.md`
-    -   `productContext.md`
-    -   `systemPatterns.md`
-    -   `techContext.md`
+-   Refactored the process to use the Reddit MCP server (`fetch_reddit_hot_threads`, `fetch_reddit_post_content`) instead of Playwright/Go script/manual HTML.
+-   Successfully fetched top-level comments for 2025-04-01 using the Reddit MCP tool.
+-   Performed NLP analysis on the fetched comments, filtering for valid POTD picks.
+-   Generated the final structured report `potd_picks_2025-04-01.csv`.
+-   Removed obsolete `main.go` and `raw_potd_comments_*.csv` files.
+-   Updated `README.md`, `systemPatterns.md`, and `techContext.md`.
 
 **Next Steps:**
-1.  Create `memory-bank/progress.md`.
-2.  Create the `.clinerules` file.
-3.  Implement the main Go application (`main.go`), including:
-    -   Playwright interaction logic (navigation, HTML fetching).
-    -   HTML parsing logic using regex.
-    -   CSV generation logic.
-4.  Create the `README.md` file.
-5.  Test the script by running it.
+1.  Update `memory-bank/progress.md`.
+2.  Attempt completion.
 
 **Active Decisions & Considerations:**
--   **Parsing Strategy:** Shifted from regex parsing within Go. The Go script will now extract raw comment text. Detailed parsing (Record, Pick, Sport, Game, Reasoning) will be handled by Cline's NLP capabilities after the Go script generates a raw comment CSV.
--   **Error Handling:** Need to implement robust error checks at each stage (Playwright actions, Go text extraction, file I/O, NLP processing).
--   **POTD Thread Identification:** Will use date-based title matching (e.g., "Pick of the Day - April 1, 2025") via Playwright to find the correct thread.
--   **Data Flow:** Playwright (HTML) -> Go (Raw Comment Text Extraction -> `raw_...csv`) -> Cline NLP (Detailed Parsing) -> Final `potd_picks_...csv`.
+-   **Parsing Strategy:** Relying on Cline's NLP capabilities to parse comment text fetched via the Reddit MCP server. Stricter filtering applied to identify actual POTD picks.
+-   **Error Handling:** Dependent on the Reddit MCP server's error handling and Cline's ability to interpret NLP results.
+-   **POTD Thread Identification:** Using title matching on results from `fetch_reddit_hot_threads`.
+-   **Data Flow:** Reddit MCP Tool (Fetch Threads -> Find Post ID -> Fetch Comments) -> Cline NLP (Filter & Parse) -> Final `potd_picks_...csv`.

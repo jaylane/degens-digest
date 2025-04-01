@@ -1,21 +1,23 @@
-# Progress: Degen's Digest (Initialization Phase)
+# Progress: Degen's Digest (Reddit MCP Workflow Implemented)
 
-**Current Status:** Project structure and initial documentation (Memory Bank) are being set up. The core application logic has not yet been implemented.
+**Current Status:** The workflow has been refactored to use the Reddit MCP server and Cline's NLP capabilities. The process for generating the daily POTD CSV report is functional. Documentation has been updated.
 
 **What Works:**
--   Project directory created.
--   Core Memory Bank files (`projectbrief.md`, `productContext.md`, `systemPatterns.md`, `techContext.md`, `activeContext.md`) created.
+-   Fetching hot threads from r/sportsbook via Reddit MCP tool.
+-   Identifying the daily POTD thread post ID.
+-   Fetching top-level comments from the POTD thread via Reddit MCP tool.
+-   NLP processing of comments to filter for picks and extract structured data (Username, Record, Pick, Sport/League, Game, Reasoning).
+-   Generating the final `potd_picks_YYYY-MM-DD.csv` report.
+-   Project structure and Memory Bank files created and updated.
+-   `README.md` updated to reflect the current workflow.
 
 **What's Left to Build:**
-1.  `.clinerules` file creation.
-2.  `main.go` implementation:
-    -   Playwright integration for Reddit navigation and HTML fetching.
-    -   Regex-based parsing logic for comment data extraction.
-    -   CSV file generation.
-    -   Error handling.
-3.  `README.md` creation.
-4.  Testing and refinement of the scraping and parsing logic.
+-   The core task is complete. Future improvements could involve:
+    -   More sophisticated NLP filtering/parsing for edge cases.
+    -   Adding options for date ranges or specific threads.
+    -   Integrating data validation.
 
 **Known Issues:**
--   None yet, as development hasn't started on the core application.
--   Anticipated challenges include handling inconsistent comment formats and potential changes in Reddit's website structure.
+-   The process relies on the Reddit MCP server being available and functional.
+-   Accuracy depends on the consistency of comment formatting and the robustness of the NLP interpretation.
+-   POTD thread title format changes could break identification.
