@@ -1,0 +1,9 @@
+# Cline Rules for Degen's Digest Project
+
+This file captures project-specific patterns, preferences, and intelligence learned during development and usage.
+
+## Initial Thoughts (To be updated)
+-   Parsing Reddit comments will likely require flexible regex. Document successful patterns here.
+-   Need to identify reliable CSS selectors or HTML structures for finding the POTD thread and comments.
+-   Track any specific user formatting conventions observed in comments that help with parsing.
+-   Note any issues encountered with Playwright interaction or Reddit blocking.
