@@ -16,6 +16,15 @@ The goal is to automate the process of collecting daily sports picks shared by u
     *   Extract structured data for valid picks: Username, Record, Today's Pick, Sport/League, Game Details, Reasoning.
 5.  **Generate Report:** Writes the extracted structured data to a CSV file named `potd_picks_YYYY-MM-DD.csv` in the project root directory.
 
+## Installation
+
+1. **Install [VSCode](https://code.visualstudio.com/) or [VSCode Forked IDE](https://codeium.com/windsurf) (I prefer Windsurf)**
+2. **Install [Cline Extension](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev)**
+3. **Install Python >= 3.11**
+4. **Install Node.js >= 18.10**
+5. **Install [Reddit MCP Server](https://github.com/adhikasp/mcp-reddit)**
+
+
 ## Usage
 
 This process is intended to be run via prompts to Cline (or a similar AI assistant with access to the required tools).
@@ -25,7 +34,7 @@ This process is intended to be run via prompts to Cline (or a similar AI assista
 2.  **Execution:**
     Instruct Cline to perform the POTD scraping task for the desired date. Cline will execute the steps outlined in "How it Works".
 3.  **Output:**
-    A CSV file named `potd_picks_YYYY-MM-DD.csv` (e.g., `potd_picks_2025-04-01.csv`) containing the structured pick data will be created or overwritten in the project root directory (`/Users/jasonlane/Documents/code/degens-digest`).
+    A CSV file named `potd_picks_YYYY-MM-DD.csv` (e.g., `potd_picks_2025-04-01.csv`) containing the structured pick data will be created or overwritten in the project root directory.
 
 ## Dependencies
 
