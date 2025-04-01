@@ -6,12 +6,6 @@
         "-y",
         "@executeautomation/playwright-mcp-server"
       ],
-      "env": {
-        "PATH": "/Users/jasonlane/.asdf/shims:/usr/bin:/bin",
-        "ASDF_DIR": "/opt/homebrew/opt/asdf/libexec",
-        "ASDF_DATA_DIR": "/Users/jasonlane/.asdf",
-        "ASDF_NODEJS_VERSION": "18.20.5"
-      },
       "disabled": false,
       "autoApprove": [
         "playwright_evaluate",
@@ -20,14 +14,7 @@
     },
     "reddit": {
     "command": "uvx",
-    "args": ["--from", "git+https://github.com/adhikasp/mcp-reddit.git", "mcp-reddit"],
-    "env": {
-      "PATH": "/Users/jasonlane/.asdf/shims:/usr/bin:/bin",
-      "ASDF_DIR": "/opt/homebrew/opt/asdf/libexec",
-      "ASDF_DATA_DIR": "/Users/jasonlane/.asdf",
-      "ASDF_PYTHON_VERSION": "3.12.4",
-      "ASDF_UV_VERSION": "0.5.11"
+    "args": ["--from", "git+https://github.com/adhikasp/mcp-reddit.git", "mcp-reddit"]
     }
-  }
   }
 }
